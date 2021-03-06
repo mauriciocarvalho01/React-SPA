@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Nav from './nav/index';
+import About from './pages/about/index'; 
+import Services from './pages/services/index'; 
+import Contact from './pages/contact/index'; 
+import Fade from 'react-reveal/Fade';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <Nav/>
+    <div className='container-fluid p-0 backgroundImg'>
+    <Fade ><About/></Fade>
+    <Fade ><Services/></Fade>
+    <Fade ><Contact/></Fade>
     </div>
+    </BrowserRouter>
   );
 }
 
